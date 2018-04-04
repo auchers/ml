@@ -2,3 +2,4 @@
 __pycache__
 plane_data/
 sandbox/
+.DS_Store
