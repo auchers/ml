@@ -4,7 +4,11 @@ from sklearn.feature_extraction.text import HashingVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.externals import joblib
 from scipy.sparse import csr_matrix, hstack
+<<<<<<< HEAD
 from sklearn.preprocessing import StandardScalers
+=======
+from sklearn.preprocessing import StandardScaler
+>>>>>>> 5491fa89e95f3c006c1384dd6482d530b30342ed
 
 class AmazonReviewFeaturePrep():
     '''Procedure for creating features for Amazon Review Dataset'''
@@ -101,6 +105,7 @@ class AmazonReviewFeaturePrep():
         X_quant_features_csr = csr_matrix(X_quant_features)
         self.X_quantFeatures = X_quant_features_csr
         print('finished quant features')
+<<<<<<< HEAD
     def __init__(self, trainingXdata):
         '''Initialize attributes: training data'''
         self.data = trainingXdata
@@ -109,6 +114,8 @@ class AmazonReviewFeaturePrep():
         '''Compute all features available in module'''
         '''Includes Product Aggregates (minTime, numReviews), Hash Vectorizor,  TDIF, String Length'''
         self.data = self.compute_product_aggregates()
+=======
+>>>>>>> 5491fa89e95f3c006c1384dd6482d530b30342ed
     
     def compute_product_aggregates(self):
         '''Computes aggregates for each 'ProductId'
@@ -144,6 +151,7 @@ class AmazonReviewFeaturePrep():
         X = sc.transform(matrix)
         print('scale applied')
         return X
+<<<<<<< HEAD
         
         
         #define aggregations on 'ProductId' group
@@ -179,3 +187,6 @@ class AmazonReviewFeaturePrep():
         self.performance_df['fp_ind'] = ((self.performance_df['preds'] == True) & (self.performance_df['labls'] == False))
         self.image_indices['TP_indices'] = np.where(self.performance_df['tp_ind']==True)[0].tolist()
         self.image_indices['FP_indices'] = np.where(self.performance_df['fp_ind']==True)[0].tolist()
+=======
+        
+>>>>>>> 5491fa89e95f3c006c1384dd6482d530b30342ed
